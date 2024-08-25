@@ -21,49 +21,52 @@ module.exports = (() => {
 			}],
 			version: "1.0.0",
 			description: "Plays Memetastic sounds when certain words are sent in chat. This plugin was heavily inspired by Metalloriff's bruh plugin so please go check him out!",
-			github: "https://github.com/TMK5/MessageSounds/tree/main/MemeSounds/MemeSounds.plugin.js",
-			github_raw: "https://raw.githubusercontent.com/Lonk12/BetterDiscordPlugins/main/MemeSounds/MemeSounds.plugin.js"
+			github: "https://github.com/TMK5/MessageSounds/tree/main/MemeSounds/MemeSounds.config.json",
+			github_raw: "https://raw.githubusercontent.com/TMK5/MessageSounds/main/MemeSounds/MemeSounds.plugin.js"
 		},
 		/* Settings */
-		defaultConfig: [{
-			/* General Settings */
-			id: "setting",
-			name: "General Sound",
-			type: "category",
-			collapsible: true,
-			shown: false,
-			settings: [
-				/* Limit Channel */
-				{id: "LimitChan", name: "Limit To Current Channel", note: "When enabled, sound effects will only play within the currently selected channel.", type: "switch", value: true},
-				/* Sound Delay */
-				{id: "delay", name: "Sound Effect Delay", note: "The delay in milliseconds between each sound effect.", type: "slider", value: 200, min: 10, max: 1000, renderValue: v => Math.round(v) + "ms" },
-				/* Sound Volume */
-				{ id: "volume", name: "Sound Effect Volume", note: "How loud the sound effects will be.", type: "slider", value: 1, min: 0.01, max: 1, renderValue: v => Math.round(v * 100) + "%" }
-			]
-		},
-		{
-			/* Toggle Sounds */
-			id: "toggle",
-			name: "Toggle Sounds",
-			type: "category",
-			collapsible: true,
-			shown: false,
-			settings: [
-				{ id: "bazinga", name: "Bazinga", type: "switch", value: true },
-				{ id: "bruh", name: "Bruh", type: "switch", value: true },
-				{ id: "cheeseburger", name: "Chezburger", type: "switch", value: true },
-				{ id: "hamburger", name: "Hamburger", type: "switch", value: true },
-				{ id: "hello", name: "Hello", type: "switch", value: true },
-				{ id: "noice", name: "Noice", type: "switch", value: true },
-				{ id: "ok", name: "Ok", type: "switch", value: true },
-				{ id: "okiedokie", name: "Okiedokie", type: "switch", value: true },
-				{ id: "oof", name: "Oof", type: "switch", value: true },
-				{ id: "vineboom", name: "Vine Boom", type: "switch", value: true },
-				{ id: "vsauce", name: "Vsauce", type: "switch", value: false },
-				{ id: "yahoo", name: "Yahoo!", type: "switch", value: true },
-				{ id: "yippee", name: "Yippee!", type: "switch", value: true }
-			]
-		}],
+		defaultConfig: [
+			{
+				/* General Settings */
+				id: "setting",
+				name: "General Sound",
+				type: "category",
+				collapsible: true,
+				shown: false,
+				settings: [
+					/* Limit Channel */
+					{ id: "LimitChan", name: "Limit To Current Channel", note: "When enabled, sound effects will only play within the currently selected channel.", type: "switch", value: true },
+					/* Sound Delay */
+					{ id: "delay", name: "Sound Effect Delay", note: "The delay in milliseconds between each sound effect.", type: "slider", value: 200, min: 10, max: 1000, renderValue: v => Math.round(v) + "ms" },
+					/* Sound Volume */
+					{ id: "volume", name: "Sound Effect Volume", note: "How loud the sound effects will be.", type: "slider", value: 1, min: 0.01, max: 1, renderValue: v => Math.round(v * 100) + "%" }
+				]
+			},
+			{
+				/* Toggle Sounds */
+				id: "toggle",
+				name: "Toggle Sounds",
+				type: "category",
+				collapsible: true,
+				shown: false,
+				settings: [
+					{ id: "fart", name: "Fart", type: "switch", value: true },
+					{ id: "bazinga", name: "Bazinga", type: "switch", value: true },
+					{ id: "bruh", name: "Bruh", type: "switch", value: true },
+					{ id: "cheeseburger", name: "Chezburger", type: "switch", value: true },
+					{ id: "hamburger", name: "Hamburger", type: "switch", value: true },
+					{ id: "hello", name: "Hello", type: "switch", value: true },
+					{ id: "noice", name: "Noice", type: "switch", value: true },
+					{ id: "ok", name: "Ok", type: "switch", value: true },
+					{ id: "okiedokie", name: "Okiedokie", type: "switch", value: true },
+					{ id: "oof", name: "Oof", type: "switch", value: true },
+					{ id: "vineboom", name: "Vine Boom", type: "switch", value: true },
+					{ id: "vsauce", name: "Vsauce", type: "switch", value: false },
+					{ id: "yahoo", name: "Yahoo!", type: "switch", value: true },
+					{ id: "yippee", name: "Yippee!", type: "switch", value: true }
+				]
+			}
+		],
 		/* Change Log */
 		changelog: [{
 			title: "New Sounds!?",
@@ -86,25 +89,25 @@ module.exports = (() => {
 			]
 		},
 		{
-            title: "Improvements",
-            type: "improved",
-            items: [
+			title: "Improvements",
+			type: "improved",
+			items: [
 				"You can now toggle individual sounds on and off! Credits to **0x00sec** on discord.",
 				"Modified some sound lengths and added sound file metadata.",
-                "Code readability.",
-                "The plugin."
-            ]
-        },
-        {
-            title: "On-Going",
-            type: "progress",
-            items: [
-                "Stuff is *totally* going on over here.",
-                "Graduating highschool.",
+				"Code readability.",
+				"The plugin."
+			]
+		},
+		{
+			title: "On-Going",
+			type: "progress",
+			items: [
+				"Stuff is *totally* going on over here.",
+				"Graduating highschool.",
 				"General life.",
-                "The plugin."
-            ]
-        }]
+				"The plugin."
+			]
+		}]
 	};
 
 	/* Library Stuff */
@@ -134,21 +137,22 @@ module.exports = (() => {
 		: (([Plugin, Api]) => {
 			const plugin = (Plugin, Api) => {
 				try {
-					const {DiscordModules: {Dispatcher, SelectedChannelStore}} = Api;
+					const { DiscordModules: { Dispatcher, SelectedChannelStore } } = Api;
 					const sounds = [
-						{re: /bazinga/gmi, file: "bazinga.mp3", duration: 730},
-						{re: /bruh/gmi, file: "bruh.mp3", duration: 365},
-						{re: /cheeseburger/gmi, file: "cheeseburger.mp3", duration: 1000},
-						{re: /hamburger/gmi, file: "hamburger.mp3", duration: 1000},
-						{re: /hello/gmi, file: "hello.mp3", duration: 750},
-						{re: /no?ice/gmi, file: "noice.mp3", duration: 800},
-						{re: /ok/gmi, file: "ok.mp3", duration: 700},
-						{re: /okiedokie/gmi, file: "okiedokie.mp3", duration: 907},
-						{re: /oof/gmi, file: "oof.mp3", duration: 265},
-						{re: /🗿/gmi, file: "vineboom.mp3", duration: 1115},
-						{re: /what if/gmi, file: "vsauce.mp3", duration: 7000},
-						{re: /yahoo/gmi, file: "yahoo.mp3", duration: 930},
-						{re: /yip?pee/gmi, file: "yippee.mp3", duration: 1000}
+						{ re: /fart/gmi, file: "Fart1.mp3", duration: 1000 },
+						{ re: /bazinga/gmi, file: "bazinga.mp3", duration: 730 },
+						{ re: /bruh/gmi, file: "bruh.mp3", duration: 365 },
+						{ re: /cheeseburger/gmi, file: "cheeseburger.mp3", duration: 1000 },
+						{ re: /hamburger/gmi, file: "hamburger.mp3", duration: 1000 },
+						{ re: /hello/gmi, file: "hello.mp3", duration: 750 },
+						{ re: /no?ice/gmi, file: "noice.mp3", duration: 800 },
+						{ re: /ok/gmi, file: "ok.mp3", duration: 700 },
+						{ re: /okiedokie/gmi, file: "okiedokie.mp3", duration: 907 },
+						{ re: /oof/gmi, file: "oof.mp3", duration: 265 },
+						{ re: /🗿/gmi, file: "vineboom.mp3", duration: 1115 },
+						{ re: /what if/gmi, file: "vsauce.mp3", duration: 7000 },
+						{ re: /yahoo/gmi, file: "yahoo.mp3", duration: 930 },
+						{ re: /yip?pee/gmi, file: "yippee.mp3", duration: 1000 }
 					];
 
 					let lastMessageID = null;
@@ -167,9 +171,12 @@ module.exports = (() => {
 						}
 
 						messageEvent = async ({ channelId, message, optimistic }) => {
-							if (this.settings.setting.LimitChan && channelId != SelectedChannelStore.getChannelId()) return;
+							if (this.settings.setting.LimitChan && channelId != SelectedChannelStore.getChannelId()){
+								console.log("Exiting...");
+								return;
+							};
 
-							if (!optimistic && lastMessageID != message.id) {
+							if (!optimistic && lastMessageID != message.id) {								
 								lastMessageID = message.id;
 								let queue = new Map();
 								const allSounds = [...sounds];
@@ -182,7 +189,8 @@ module.exports = (() => {
 
 								for (let sound of [...queue.entries()].sort((a, b) => a[0] - b[0])) {
 									if (this.settings.toggle[sound[1].file.replace(/\..+$/, "")]) {
-										let audio = new Audio("https://github.com/Lonk12/BetterDiscordPlugins/raw/main/MemeSounds/Sounds/" + sound[1].file);
+										//let audio = new Audio("https://github.com/Lonk12/BetterDiscordPlugins/raw/main/MemeSounds/Sounds/" + sound[1].file);
+										let audio = new Audio("https://github.com/TMK5/MessageSounds/raw/main/MemeSounds/Sounds/" + sound[1].file);
 										audio.volume = this.settings.setting.volume;
 										audio.play();
 										await new Promise(r => setTimeout(r, sound[1].duration + this.settings.setting.delay));
@@ -190,6 +198,7 @@ module.exports = (() => {
 								}
 							}
 						};
+
 						onStop() {
 							Dispatcher.unsubscribe("MESSAGE_CREATE", this.messageEvent);
 						}
