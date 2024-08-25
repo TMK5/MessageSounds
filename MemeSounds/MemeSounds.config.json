@@ -2,13 +2,13 @@
     "info": {
         "name": "MemeSounds",
         "authors": [{
-            "name": "Lonk1639",
-            "discord_id": "557388558017495046",
-            "github_username": "Lonk12"
+            "name": "TMK5",
+            "discord_id": "216114487713988608",
+            "github_username": "TMK5"
         }],
         "version": "1.0.0",
         "description": "Plays Memetastic sounds depending on what is being sent in chat. This was heavily inspired by the idea of Metalloriff's bruh plugin so please go check him out!",
-        "github": "https://github.com/Lonk12/BetterDiscordPlugins/blob/main/MemeSounds/MemeSounds.plugin.js",
+        "github": "https://github.com/TMK5/MessageSounds/tree/main/MemeSounds/MemeSounds.plugin.js",
         "github_raw": "https://raw.githubusercontent.com/Lonk12/BetterDiscordPlugins/main/MemeSounds/MemeSounds.plugin.js"
     },
     "changelog": [
