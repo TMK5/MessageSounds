@@ -139,7 +139,7 @@ module.exports = (() => {
 				try {
 					const { DiscordModules: { Dispatcher, SelectedChannelStore } } = Api;
 					const sounds = [
-						{ re: /fart/gmi, file: "Fart1.mp3", duration: 1000 },
+						{ re: /fart/gmi, file: "fart.mp3", duration: 1000 },
 						{ re: /bazinga/gmi, file: "bazinga.mp3", duration: 730 },
 						{ re: /bruh/gmi, file: "bruh.mp3", duration: 365 },
 						{ re: /cheeseburger/gmi, file: "cheeseburger.mp3", duration: 1000 },
